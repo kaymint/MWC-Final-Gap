@@ -1,0 +1,43 @@
+Users
+http://localhost/mobile-web/MWCFinal/model/user.php?cmd=2&user=Kenneth%20Mintah%20Mensah&pass=kaymint
+
+http://localhost/mobile-web/MWCFinal/model/user.php?cmd=1&user=Kenneth%20Mintah%20Mensah&pass=kaymint&email=kenneth.mensah@ashesi.edu.gh
+
+
+Book
+
+Add Book
+http://localhost/mobile-web/MWCFinal/model/book.php?cmd=1&title=Akingo&author=Achebe%20Jr&price=34&yr=1987&desc=sth%20sth&isbn=123-344
+
+
+View Books
+http://localhost/mobile-web/MWCFinal/model/book.php?cmd=9
+
+
+Search Book by Name or Author
+http://localhost/mobile-web/MWCFinal/model/book.php?cmd=5&st=ant
+
+
+Get Book by Id
+http://localhost/mobile-web/MWCFinal/model/book.php?cmd=4&id=2
+
+
+Add Review
+http://localhost/mobile-web/MWCFinal/model/book.php?cmd=2&review=An%20excellent%20portrayal%20of%20disctatorship%20in%20microcosm&bk=1&reviewer=1
+
+
+Get Book Review by book Id
+http://localhost/mobile-web/MWCFinal/model/book.php?cmd=6&id=2
+
+
+Search review by book
+http://localhost/mobile-web/MWCFinal/model/book.php?cmd=7&book=ant
+
+Add Purchase
+http://localhost/mobile-web/MWCFinal/model/book.php?cmd=3&user=1&bk=2&cost=23
+
+View Purchase
+http://localhost/mobile-web/MWCFinal/model/book.php?cmd=8&user=1
+
+
+SELECT * FROM mwc_books B, mwc_reviews R, mwc_book_users U WHERE B.id = R.book AND U.username = R.reviewer AND R.book = 2
