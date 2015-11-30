@@ -29,7 +29,7 @@ function signup(){
 
         localStorage.setItem("email", obj.email);
         localStorage.setItem("username", obj.username);
-        window.location.replace("view/admin_dashboard.html");
+        window.location.replace("../view/admin_dashboard.html");
     }else{
         Materialize.toast('Failed', 4000);
     }
