@@ -29,7 +29,7 @@ function signup(){
 
         localStorage.setItem("email", obj.email);
         localStorage.setItem("username", obj.username);
-        window.location.replace("../view/admin_dashboard.html");
+        window.location.replace("view/admin_dashboard.html");
     }else{
         Materialize.toast('Failed', 4000);
     }
@@ -42,7 +42,7 @@ function validateLogin(user, pass){
     if(obj.result===1){					//check result
         localStorage.setItem("email", obj.email);
         localStorage.setItem("username", obj.username);
-        window.location.replace("../view/admin_dashboard.html");
+        window.location.replace("view/admin_dashboard.html");
     }else{
         //show error message
         alert("login failed");
