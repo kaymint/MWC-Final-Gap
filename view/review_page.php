@@ -74,7 +74,7 @@
 <div class=" row navbar-fixed">
     <nav class="col s12" id="heading">
         <div class="nav-wrapper ">
-            <a href="#" class="brand-logo center" accesskey="l"> <span class="mdi-action-book medium">BookReview</span></a>
+            <a href="#" class="brand-logo center" accesskey="l"> <span class="mdi-action-book medium"></span> Book-Reviews  </a>
             <ul  class="right hide-on-med-and-down">
                 <li><i class="zmdi zmdi-account-circle circle"></i></li>
                 <li><span id="username"> </span></li>
@@ -244,6 +244,50 @@
         </div>
 
         <div class="row">
+
+            <div class="col s12 ">
+                <h5><span class="fa fa-rss orange-text show-on-medium-and-down"></span> RSS Feeds</h5>
+
+                <div class="hide-on-med-and-down">
+                    <?php
+                    require_once("magpierss/rss_fetch.inc");
+                    $url="http://libwww.freelibrary.org/rss/reviewrss.cfm";
+                    $rss=fetch_rss($url);
+
+                    echo "<h5> ". $rss->channel['title']."</h5><p>";
+                    echo "<div>";
+                    foreach ($rss->items as $item) {
+                        $href = $item['link'];
+                        $title = $item['title'];
+                        $description = $item['description'];
+                        $date = $item['dc:date'];
+                        echo "<div ><h6> <a href=".$href."><span class='fa fa-rss orange-text medium'></span> ".$title."</a></h6><span class='right'>".$date."</span></div>";
+                        echo "<p>".$description."</p>";
+                    }
+                    echo "</div>";
+                    ?>
+
+                </div>
+
+
+                <div class="show-on-medium-and-down hide-on-large-only">
+                    <?php
+                        require_once("magpierss/rss_fetch.inc");
+                    $url="http://libwww.freelibrary.org/rss/reviewrss.cfm";
+                    $rss=fetch_rss($url);
+
+                    echo "<h5> ". $rss->channel['title']."</h5>";
+                    echo "<div>";
+                    foreach ($rss->items as $item) {
+                        $href = $item['link'];
+                        $title = $item['title'];
+                        $description = $item['description'];
+                        echo "<div class='card-panel'><h6><span class='fa fa-rss orange-text'></span>  <a class='black-text' href=".$href.">".$title."</a></h6></div>";
+                    }
+                    echo "</div>";
+                    ?>
+
+                </div>
             </div>
         </div>
 
